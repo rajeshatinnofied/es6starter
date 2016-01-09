@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AACA;EACE,gBAAA;EACA,YAAA,EAAA","file":"app.css","sourcesContent":["body {\n\th2 {\n\t\tfont-size: 28px;\n\t\tcolor:#00f;\n\t}\n}"],"sourceRoot":"/source/"}
