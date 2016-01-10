@@ -6,6 +6,7 @@
   	"bootstrap": "",
   	"fontawesome": "",
   	"jquery-ui": "",
-  	"modernizr": ""
+  	"modernizr": "",
+  	"underscore": ""
   }
 }

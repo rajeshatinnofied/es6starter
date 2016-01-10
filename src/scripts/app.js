@@ -8,5 +8,4 @@ function startApp() {
 	$('#todo_app').html(mainContainer.getTemplate());
 	mainContainer.bindEvents();
 }
-
 startApp();

@@ -1,3 +1,7 @@
+const storageName = 'mytodos';
+
+let instance = null;
+
 export class LocalStorage {
 	
 	/**
@@ -5,12 +9,15 @@ export class LocalStorage {
 	 * default format is, the data is an array
 	 * @param  {String} storageName Name of the storage
 	 */
-	constructor(storageName) {
-		this.storageName = storageName;
+	constructor() {
+		if(!instance) {
+			instance = this;
+		}
 		if(!window.localStorage.hasOwnProperty(storageName)) {
 			window.localStorage[storageName] = JSON.stringify([]);
 		}
-		this.storage = JSON.parse(window.localStorge[storageName]);
+		this.storage = JSON.parse(window.localStorage[storageName]);
+		return instance;
 	}
 
 	/**
@@ -28,20 +35,28 @@ export class LocalStorage {
 	 * @param {Object} object the object to add to the storage
 	 * @param {Number} index  index of insertion, default -1
 	 */
-	addData(object,index=-1) {
+	addData(object) {
+		console.log('in service',object);
 		let date = new Date();
 		let objectID = 'id_'+this.storage.length+'_'+date.getMilliseconds();
 
-		if(this.storage.length<index||index==-1) {
-			index = this.storage.length;
-		}
-		let firstPart = this.storage.slice(0,index);
-		let lastPart = this.storage.slice(index, this.storage.length);
-		firstPart.push({
+		this.storage.push({
 			id:objectID,
 			data:object
 		});
-		this.storage = firstPart.concat(lastPart);
-		window.localStorge[storageName] = JSON.stringify(this.localStorage);
+		window.localStorage[storageName] = JSON.stringify(this.storage);
+		this.updateContainer('todoAdded');
+	}
+
+	deleteData(id) {
+		if(this.storage.length===0) {
+			return;
+		}
+
+	}
+
+	updateContainer(eventName) {
+		let updateEvent = new Event(eventName);
+		window.dispatchEvent(updateEvent);
 	}
 }

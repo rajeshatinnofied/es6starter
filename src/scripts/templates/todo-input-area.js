@@ -1,4 +1,10 @@
+import {Todo} from '../models/single-todo';
+import {LocalStorage} from '../service/local-storage-service';
+
 export class TodoInput {
+	constructor() {
+		this.storage = new LocalStorage();
+	}
 	getTemplate() {
 		let template = `<div class="form-group todo-input">
 							<div class="col-sm-12 col-md-4 col-md-offset-4" id="input-area">
@@ -30,11 +36,11 @@ export class TodoInput {
 
 	addTodo() {
 		let text = $('#todoinput').val();
-		console.log('text is',text);
 		if(text=='') {
-			console.log('here');
 			TodoInput.addErrorMessage('Please type the todo here');
+			return;
 		}
-		console.log('Hii');
+		let todo = new Todo(text);
+		$('#todoinput').val('');
 	}
 }
