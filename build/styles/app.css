@@ -1,6 +1,14 @@
 body h2 {
   font-size: 28px;
   color: #00f; }
+body .todo-input {
+  margin-top: 15px; }
+  body .todo-input input {
+    width: 100%;
+    line-height: 28px; }
+  body .todo-input #input-area p {
+    font-size: 14px;
+    color: #f22; }
 
 
 /*# sourceMappingURL=app.css.map */

@@ -3,4 +3,17 @@ body {
 		font-size: 28px;
 		color:#00f;
 	}
+	.todo-input {
+		margin-top: 15px;
+		input {
+			width: 100%;
+			line-height: 28px;
+		}
+		#input-area {
+			p {
+				font-size: 14px;
+				color: #f22;
+			}
+		}
+	}
 }

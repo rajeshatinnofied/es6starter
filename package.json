@@ -10,6 +10,10 @@
   "dependencies": {
     "gulp-babel": "",
     "gulp-browserify": "^0.5.1",
+    "babelify": "",
+    "glob": "",
+    "vinyl-buffer": "",
+    "browserify": "",
     "gulp-concat": "^2.6.0",
     "gulp-if": "^1.2.5",
     "gulp-minify-css": "^0.3.0",
@@ -24,7 +28,9 @@
     "gulp-autoprefixer": "",
     "gulp-sourcemaps": "",
     "browser-sync": "",
-    "del": ""
+    "del": "",
+    "lodash": "",
+    "vinyl-source-stream": ""
   },
   "devDependencies": {
     "babel-core": "",
